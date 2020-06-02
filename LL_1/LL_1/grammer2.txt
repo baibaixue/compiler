@@ -1,0 +1,8 @@
+S
+S Q R
+a b c
+S->Qc|c
+Q->Rb|b
+R->Sa|a
+
+

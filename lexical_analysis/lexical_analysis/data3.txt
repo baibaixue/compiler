@@ -1,0 +1,5 @@
+line1#空白符识别和具体行报错
+line2	a+b	<>	c	;
+line3
+line4	(12	+	13	=	0);
+line5	xx++yy := 3;此行报错

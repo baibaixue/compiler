@@ -1,0 +1,8 @@
+E
+E T A M F
+( ) i + - * / @
+E->EAT|T
+T->TMF|F
+F->(E)|i
+A->+|-
+M->*|/

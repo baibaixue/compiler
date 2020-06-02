@@ -1,0 +1,12 @@
+﻿  main.cpp
+D:\Bai\compiler\Recursive_descent\Recursive_descent\Recursive_descent\main.cpp(38,12): warning C4018: “>=”: 有符号/无符号不匹配
+D:\Bai\compiler\Recursive_descent\Recursive_descent\Recursive_descent\main.cpp(54,12): warning C4018: “>=”: 有符号/无符号不匹配
+D:\Bai\compiler\Recursive_descent\Recursive_descent\Recursive_descent\main.cpp(64,12): warning C4018: “>=”: 有符号/无符号不匹配
+D:\Bai\compiler\Recursive_descent\Recursive_descent\Recursive_descent\main.cpp(88,12): warning C4018: “>=”: 有符号/无符号不匹配
+D:\Bai\compiler\Recursive_descent\Recursive_descent\Recursive_descent\main.cpp(104,12): warning C4018: “>=”: 有符号/无符号不匹配
+  正在生成代码
+  3 of 501 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  Recursive_descent.vcxproj -> D:\Bai\compiler\Recursive_descent\Recursive_descent\Release\Recursive_descent.exe

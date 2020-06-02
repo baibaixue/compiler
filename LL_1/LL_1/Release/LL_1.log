@@ -1,0 +1,27 @@
+﻿  grammer.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xstddef(127,22): error C2676: 二进制“<”:“const _Ty”不定义该运算符或到预定义运算符可接收的类型的转换
+          with
+          [
+              _Ty=Production
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xstddef(126): message : 在编译 类 模板 成员函数“bool std::less<Production>::operator ()(const _Ty &,const _Ty &) const”时
+          with
+          [
+              _Ty=Production
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xtree(1708): message : 查看对正在编译的函数 模板 实例化“bool std::less<Production>::operator ()(const _Ty &,const _Ty &) const”的引用
+          with
+          [
+              _Ty=Production
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xmemory(1318): message : 查看对正在编译的 类 模板 实例化“std::less<Production>”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xmemory(1318): message : 查看指向正在编译的变量模板“const bool is_empty_v<std::less<Production> >”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\map(75): message : 查看对正在编译的 类 模板 实例化“std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>”的引用
+          with
+          [
+              _Kty=Production,
+              _Ty=std::set<char,std::less<char>,std::allocator<char>>,
+              _Pr=std::less<Production>,
+              _Alloc=std::allocator<std::pair<const Production,std::set<char,std::less<char>,std::allocator<char>>>>
+          ]
+D:\Bai\compiler\LL_1\LL_1\grammer.h(80): message : 查看对正在编译的 类 模板 实例化“std::map<Production,std::set<char,std::less<char>,std::allocator<char>>,std::less<Production>,std::allocator<std::pair<const Production,std::set<char,std::less<char>,std::allocator<char>>>>>”的引用

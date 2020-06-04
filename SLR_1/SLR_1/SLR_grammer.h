@@ -155,12 +155,12 @@ private:
 
 	//vector<quatern> Semantic_rules;	//语义规则
 	vector<var> variable;	//生成变量列表
-	int has_var(string name);	//是否已有c变量,若有则返回下标
+	int has_var(string name);	//是否已有name变量,若有则返回下标
 	string creat_new_id(char c,string name);	//生成终结符号的变量
 	string creat_new_id(char c);	//生成非终结符号的变量
 	quatern Definition_rule(var arg1, var arg2,char res,int n);	//定义语义规则，返回四元组	E->E+T|E-T T->T*F|T/F
-	void Definition_rule(var& arg1, char res, int n);	//定义语义规则,直接赋值情况		E->T E->F F->i
-	quatern Definition_rule(var arg1, char res);	//F->(E)
+	void Definition_rule(var& arg1, char res, int n);	//定义语义规则,直接赋值情况		E->T E->F F->i F->(E)
+	//quatern Definition_rule(var arg1, char res);	//F->(E)
 	quatern Definition_rule(var arg1, var& res);	//S->i:=E
 };
 

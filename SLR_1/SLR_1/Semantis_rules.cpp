@@ -1,141 +1,4 @@
 #include"SLR_grammer.h"
-/*
-void SLR_Grammer::create_var_id(vector<WORD*> w) {
-	vector<string> id;
-	char a = 'A';
-	for (unsigned int i = 0; i < w.size(); i++) {
-		if (find(id.begin(), id.end(), w[i]->name) == id.end()) {
-			id.push_back(w[i]->name);
-			variable.push_back(var{a,1});
-			a++;
-		}
-	}
-}
-
-char SLR_Grammer::creat_new_id() {
-	char a = 'A';
-	while (true) {
-		if (has_var(a) == -1) {
-			variable.push_back(var{ a,1 });
-			return a;
-		}
-		a++;
-	}
-}
-
-int SLR_Grammer::has_var(char c) {
-	for (unsigned int i = 0; i < variable.size(); i++) {
-		if (c == variable[i].name) {
-			return i;
-		}
-	}
-	return -1;
-}
-
-quatern SLR_Grammer::Definition_rule(char l,string r,int n) {
-	quatern res;
-	int arg1_num;
-	int arg2_num;
-	int res_num;
-	switch (n) {
-		case 1:	//S->i:=E
-			res.op = ":=";
-			res.arg1 = r[3];
-			res.arg2 = '\0';
-			res.result = creat_new_id();
-			arg1_num = has_var(r[3]);
-			assert(arg1_num == -1);
-			res_num = has_var(res.result);
-			variable[res_num].value = variable[arg1_num].value;
-			return res;
-		case 2:	//E->E+T
-			res.op = '+';
-			res.arg1 = r[0];
-			res.arg2 = r[2];
-			res.result = creat_new_id();
-			arg1_num = has_var(r[0]);
-			arg2_num = has_var(r[2]);
-			res_num = has_var(res.result);
-			assert(arg1_num == -1 || arg2_num == -1);
-			variable[res_num].value = variable[arg1_num].value + variable[arg2_num].value;
-			return res;
-		case 3:	//E->E-F
-			res.op = '-';
-			res.arg1 = r[0];
-			res.arg2 = r[2];
-			res.result = creat_new_id();
-			arg1_num = has_var(r[0]);
-			arg2_num = has_var(r[2]);
-			res_num = has_var(res.result);
-			assert(arg1_num == -1 || arg2_num == -1);
-			variable[res_num].value = variable[arg1_num].value - variable[arg2_num].value;
-			return res;
-		case 4:	//E->T
-			res.op = "=";
-			res.arg1 = r[0];
-			res.arg2  = '\0';
-			res.result = creat_new_id();
-			arg1_num = has_var(r[0]);
-			assert(arg1_num == -1);
-			res_num = has_var(res.result);
-			variable[res_num].value = variable[arg1_num].value;
-			return res;
-		case 5:	//T->T*F
-			res.op = '*';
-			res.arg1 = r[0];
-			res.arg2 = r[2];
-			res.result = creat_new_id();
-			arg1_num = has_var(r[0]);
-			arg2_num = has_var(r[2]);
-			res_num = has_var(l);
-			assert(arg1_num == -1 || arg2_num == -1);
-			variable[res_num].value = variable[arg1_num].value * variable[arg2_num].value;
-			return res;
-		case 6:	//T->T/F
-			res.op = '/';
-			res.arg1 = r[0];
-			res.arg2 = r[2];
-			res.result = creat_new_id();
-			arg1_num = has_var(r[0]);
-			arg2_num = has_var(r[2]);
-			res_num = has_var(res.result);
-			assert(arg1_num == -1 || arg2_num == -1);
-			variable[res_num].value = variable[arg1_num].value / variable[arg2_num].value;
-			return res;
-		case 7:	//T->F
-			res.op = "=";
-			res.arg1 = r[0];
-			res.arg2 = '\0';
-			res.result = creat_new_id();
-			arg1_num = has_var(r[0]);
-			assert(arg1_num == -1);
-			res_num = has_var(l);
-			variable[res_num].value = variable[arg1_num].value;
-			return res;
-		case 8:	//F->(E)
-			res.op = "=";
-			res.arg1 = r[1];
-			res.arg2 = '\0';
-			res.result = creat_new_id();
-			arg1_num = has_var(r[1]);
-			assert(arg1_num == -1);
-			res_num = has_var(res.result);
-			variable[res_num].value = variable[arg1_num].value;
-			return res;
-		case 9:	//F->i
-			res.op = "=";
-			res.arg1 = r[0];
-			res.arg2 = '\0';
-			res.result = creat_new_id();
-			arg1_num = has_var(r[0]);
-			assert(arg1_num == -1);
-			int res_num = has_var(res.result);
-			variable[res_num].value = variable[arg1_num].value;
-			return res;
-		default:return res;
-	}
-}
-*/
 
 int SLR_Grammer::has_var(string name)
 {
@@ -210,7 +73,7 @@ quatern SLR_Grammer::Definition_rule(var arg1, var arg2, char res, int n)
 }
 void SLR_Grammer::Definition_rule(var& arg1, char res, int n)
 {
-	if (n == 4 || n == 7 || n==9) {
+	if (n == 4 || n == 7 || n==9 || n==8) {
 		arg1.i = res;
 	}
 	else {
@@ -218,6 +81,7 @@ void SLR_Grammer::Definition_rule(var& arg1, char res, int n)
 		exit(0);
 	}
 }
+/*
 quatern SLR_Grammer::Definition_rule(var arg1, char res)
 {
 	quatern result;
@@ -230,6 +94,7 @@ quatern SLR_Grammer::Definition_rule(var arg1, char res)
 	
 	return quatern(result);
 }
+*/
 quatern SLR_Grammer::Definition_rule(var arg1, var& res)
 {
 	quatern result;
@@ -320,13 +185,15 @@ vector<quatern> SLR_Grammer::get_analysis(vector<WORD*> words) {
 				cout << "(" << q.op << "," << q.arg1 << "," << " " << "," << q.result << ")" << endl;
 				chara.push(var{"\0", 0, 'S'});
 			}
+			/*
 			else if (second == 8) {
 				quatern q = Definition_rule(variable[arg2_num], production[second].left);
 				cout << "(" << q.op << "," << q.arg1 << "," << " " << "," << q.result << ")" << endl;
 				res.push_back(q);
 				chara.push(variable[has_var(q.result)]);
 			}
-			else if (second == 4 || second == 7 || second == 9) {
+			*/
+			else if (second == 4 || second == 7 || second == 8 || second == 9) {
 				Definition_rule(variable[arg2_num], production[second].left,second);
 				chara.push(variable[arg2_num]);
 			}

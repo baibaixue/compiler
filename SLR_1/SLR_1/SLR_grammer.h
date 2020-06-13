@@ -88,6 +88,7 @@ public:
 
 	void output_grammer();	//输出文法
 	void output_projects();	//输出项目集
+	void output_projects_map();	//输出规范项目族
 	void output_DFA();	//输出DFA
 	void output_analysis_table();	//输出分析表
 

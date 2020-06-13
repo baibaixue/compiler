@@ -150,6 +150,17 @@ void SLR_Grammer::output_projects() {
 	}
 }
 
+void SLR_Grammer::output_projects_map()
+{
+	cout << "输出规范项目族：" << endl;
+	for (unsigned int i = 0; i < I.size(); i++) {
+		cout << "I" << i << ":" << endl;
+		for (set<int>::iterator it = I[i].begin(); it != I[i].end(); it++) {
+			projects[*it].output();
+		}
+	}
+}
+
 int SLR_Grammer::get_i_index(set<int> i) {
 	vector<set<int>>::iterator index = find(I.begin(), I.end(), i);
 	if (index == I.end()) {
